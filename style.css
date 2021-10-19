@@ -9,6 +9,7 @@ body, html {
     line-height: 2;
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 400;
+    scroll-behavior: smooth;
 }
 
 a, a:hover {
@@ -242,7 +243,7 @@ h2 {
     justify-content: center;
     padding: 13px 10px;
     margin-bottom: 20px;
-    box-shadow: 0px 4px 0px 0px #c3a3a3b8;
+    /* box-shadow: 0px 4px 0px 0px #c3a3a3b8; */
 }
 
 .best-price-left, .best-price-right {
@@ -559,11 +560,11 @@ h2 {
 }
 
 .boost-btn {
-    width: 80%;
+    width: 75%;
     margin: 0 auto;
     background-color: #F12555;
     color: #fff;
-    font-size: 24px;
+    font-size: 20px;
     text-transform: uppercase;
     font-weight: 500;
     padding: 10px;
@@ -623,7 +624,7 @@ ul>li:last-child a {
     bottom: 20px;
     right: 30px;
     z-index: 99;
-    font-size: 30px;
+    font-size: 24px;
     border: none;
     outline: none;
     background-color: #474848;
@@ -654,10 +655,10 @@ button:hover {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 40%;
+    width: 35%;
     height: 400px;
     position: fixed;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 5px;
@@ -665,9 +666,11 @@ button:hover {
     opacity: 0;
     box-shadow: 0px 1px 15px 3px rgb(0 0 0 / 28%);
     padding: 10px 0px;
+    transition: all .3s ease-out;
 }
 
 .popup-card.show {
+    top: 50%;
     visibility: visible;
     opacity: 1;
     z-index: 9999999999;

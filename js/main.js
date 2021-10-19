@@ -100,7 +100,7 @@ function topFunction() {
 const popupCounter = (number = 100, format = "seconds") => {
   const d = document;
 
-  const hoursElement = d.querySelector(".hour-time");
+  // const hoursElement = d.querySelector(".hour-time");
   const minutesElement = d.querySelector(".minute-time");
   const secondsElement = d.querySelector(".second-time");
   let countdown;
@@ -112,8 +112,8 @@ const popupCounter = (number = 100, format = "seconds") => {
         return timer(number);
       case "minutes":
         return timer(number * 60);
-      case "hours":
-        return timer(number * 60 * 60);
+      // case "hours":
+      //   return timer(number * 60 * 60);
     }
   }
 
@@ -134,7 +134,7 @@ const popupCounter = (number = 100, format = "seconds") => {
   }
 
   function displayTimeLeft(seconds) {
-    hoursElement.textContent =  +Math.floor((seconds % 86400) / 3600);
+    // hoursElement.textContent =  +Math.floor((seconds % 86400) / 3600);
     minutesElement.textContent = Math.floor(((seconds % 86400) % 3600) / 60);
     secondsElement.textContent =
       seconds % 60 < 10 ? `0${seconds % 60}` : seconds % 60;
@@ -142,7 +142,7 @@ const popupCounter = (number = 100, format = "seconds") => {
 };
 
 
-popupCounter (20, "hours");
+popupCounter (30, "minutes");
 
 
 
@@ -154,7 +154,7 @@ const overlay = document.querySelector(".overlay");
 const overlay_show = document.querySelector(".overlay-show");
 
 window.addEventListener("load", function () {
-  popupShow();
+  popupShow(20000);
 });
 
 function popupShow(time) {
@@ -170,13 +170,10 @@ close_btn.addEventListener("click", function () {
 
 });
 
-current_btn.addEventListener("click", function () {
-  card_popup.classList.remove("show");
-  overlay.classList.remove("overlay-show");
-  
-});
+
 
 document.addEventListener("click", function () {
+  console.log('clicked :>> ');
   card_popup.classList.remove("show");
   overlay.classList.remove("overlay-show");
   
